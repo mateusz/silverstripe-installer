@@ -25,7 +25,7 @@
 
 cms:master git://github.com/silverstripe/silverstripe-cms.git
 framework:master git://github.com/silverstripe/sapphire.git
-themes/ssexpress:master git://github.com/mateusz/ssexpress-theme.git
+themes/ssexpress:master git://github.com/droptables/ssexpress-theme.git
 testdata:master git://github.com/mateusz/silverstripe-testdata.git
 
 
