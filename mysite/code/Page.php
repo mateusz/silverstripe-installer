@@ -10,34 +10,30 @@ class Page extends SiteTree {
 }
 class Page_Controller extends ContentController {
 
-	/**
-	 * An array of actions that can be accessed via a request. Each array element should be an action name, and the
-	 * permissions or conditions required to allow the user to access it.
-	 *
-	 * <code>
-	 * array (
-	 *     'action', // anyone can access this action
-	 *     'action' => true, // same as above
-	 *     'action' => 'ADMIN', // you must have ADMIN permissions to access this action
-	 *     'action' => '->checkAction' // you can only access this action if $this->checkAction() returns true
-	 * );
-	 * </code>
-	 *
-	 * @var array
-	 */
 	private static $allowed_actions = array (
 	);
+
+	public function Pages() {
+		$list = new AjaxPaginatedList(Page::get(), $this->request);
+		$list->setPageLength(3);
+		return $list;
+	}
 
 	public function init() {
 		parent::init();
 
-		// Note: you should use SS template require tags inside your templates 
-		// instead of putting Requirements calls here.  However these are 
-		// included so that our older themes still work
 		Requirements::themedCSS('reset');
 		Requirements::themedCSS('layout'); 
 		Requirements::themedCSS('typography'); 
 		Requirements::themedCSS('form'); 
+
+		Requirements::javascript('mysite/javascript/jquery-2.0.0.js');
+		Requirements::javascript('mysite/javascript/jquery-ui-1.10.3.custom.js');
+		//Requirements::javascript('framework/admin/javascript/lib.js');
+		Requirements::javascript('frontend/javascript/underscore.js');
+		Requirements::javascript('frontend/javascript/jquery.ss.pagination.js');
+		Requirements::javascript('frontend/javascript/jquery.ss.endless.js');
+		Requirements::javascript('mysite/javascript/testing.js');
 	}
 
 }

@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = '';
+$database = 'SS_coredev31';
 
 require_once('conf/ConfigureFromEnv.php');
 

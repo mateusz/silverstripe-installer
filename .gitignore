@@ -9,3 +9,7 @@ silverstripe-cache
 .DS_Store
 vendor/
 composer.lock
+cms
+framework
+frontend
+themes/simple
